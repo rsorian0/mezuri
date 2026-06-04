@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-
 export function useFadeUp() {
   useEffect(() => {
     const obs = new IntersectionObserver((entries) => {
@@ -14,7 +13,6 @@ export function useFadeUp() {
         obs.unobserve(entry.target)
       })
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
-
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
