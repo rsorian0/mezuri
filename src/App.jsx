@@ -25,11 +25,21 @@ export default function App() {
       })
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
 
+    const hlObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed')
+          hlObs.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.6 })
+
     const timeout = setTimeout(() => {
       document.querySelectorAll('.fade-up').forEach(el => obs.observe(el))
+      document.querySelectorAll('.hl-clean').forEach(el => hlObs.observe(el))
     }, 100)
 
-    return () => { clearTimeout(timeout); obs.disconnect() }
+    return () => { clearTimeout(timeout); obs.disconnect(); hlObs.disconnect() }
   }, [])
 
   return (
