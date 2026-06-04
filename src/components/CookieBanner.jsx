@@ -11,19 +11,9 @@ export default function CookieBanner() {
   }, [])
 
   function hide() { setVisible(false) }
-
-  function accept() {
-    localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics: true, marketing: true }))
-    hide()
-  }
-  function reject() {
-    localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics: false, marketing: false }))
-    hide()
-  }
-  function save() {
-    localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics, marketing }))
-    hide()
-  }
+  function accept() { localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics: true, marketing: true })); hide() }
+  function reject() { localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics: false, marketing: false })); hide() }
+  function save() { localStorage.setItem('mezuri_cookies', JSON.stringify({ essential: true, analytics, marketing })); hide() }
 
   if (!visible) return null
 
