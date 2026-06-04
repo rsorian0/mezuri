@@ -241,19 +241,109 @@ footer { background: var(--primary); color: rgba(255,255,255,0.35); padding: 1.7
   .section-title { font-size: 1.375rem; }
 }
 
-.cookie-banner { position: fixed; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; max-width: 560px; background: var(--primary); border-radius: 12px; padding: 1.25rem 1.5rem; z-index: 9999; box-shadow: 0 8px 40px rgba(0,0,0,0.25); color: rgba(255,255,255,0.8); font-size: 0.875rem; line-height: 1.6; }
-.cookie-step1 p { margin-bottom: 1rem; }
+/* Cookie Banner — barra fixa full-width na parte inferior */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.3);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.cookie-banner.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+/* Step 1 — layout horizontal */
+.cookie-step1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+}
+.cookie-step1 p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
 .cookie-step1 p a { color: rgba(255,255,255,0.6); }
-.cookie-step1-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.cookie-step2-title { font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
-.cookie-step2-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
-.cookie-options { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
-.cookie-option { padding: 0.75rem 1rem; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); }
-.cookie-option-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.25rem; }
-.cookie-option-name { font-size: 0.875rem; font-weight: 500; color: white; }
-.cookie-option-desc { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
-.cookie-required { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
-.cookie-step2-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.cookie-step1-actions {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Step 2 — grid 3 colunas */
+.cookie-step2 {
+  display: none;
+  padding: 1.5rem 2rem 1rem;
+}
+.cookie-step2.active { display: block; }
+.cookie-step2-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.35rem;
+}
+.cookie-step2-sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.cookie-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.cookie-option {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  transition: border-color 0.15s;
+}
+.cookie-option:hover { border-color: rgba(255,255,255,0.16); }
+.cookie-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+.cookie-option-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+.cookie-option-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.5;
+}
+.cookie-step2-actions {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.cookie-required {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Botões do banner */
 .cbtn { padding: 0.45rem 1rem; border-radius: var(--radius); font-family: var(--font); font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.15s; border: none; }
 .cbtn-ghost { background: transparent; color: rgba(255,255,255,0.5); }
 .cbtn-ghost:hover { color: white; }
@@ -261,9 +351,55 @@ footer { background: var(--primary); color: rgba(255,255,255,0.35); padding: 1.7
 .cbtn-outline:hover { border-color: rgba(255,255,255,0.4); color: white; }
 .cbtn-white { background: white; color: var(--primary); }
 .cbtn-white:hover { background: #f1f5f9; }
-.toggle { position: relative; display: inline-block; width: 36px; height: 20px; }
+
+/* Toggle — preto da marca quando ativado */
+.toggle {
+  position: relative;
+  width: 38px;
+  height: 22px;
+  flex-shrink: 0;
+}
 .toggle input { opacity: 0; width: 0; height: 0; }
-.toggle-slider { position: absolute; cursor: pointer; inset: 0; background: rgba(255,255,255,0.15); border-radius: 20px; transition: 0.2s; }
-.toggle-slider::before { content: ''; position: absolute; width: 14px; height: 14px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.2s; }
-.toggle input:checked + .toggle-slider { background: #16a34a; }
-.toggle input:checked + .toggle-slider::before { transform: translateX(16px); }
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.toggle input:checked + .toggle-slider {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.toggle input:checked + .toggle-slider::before {
+  transform: translateX(16px);
+  background: white;
+}
+.toggle input:disabled + .toggle-slider {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.toggle input:disabled:checked + .toggle-slider {
+  background: #0f172a;
+}
+
+@media (max-width: 768px) {
+  .cookie-step1 { padding: 0.875rem 1.25rem; gap: 1rem; }
+  .cookie-step1-actions { width: 100%; justify-content: flex-end; }
+  .cookie-step2 { padding: 1.25rem 1.25rem 0.875rem; }
+  .cookie-options { grid-template-columns: 1fr; }
+  .cookie-step2-actions { justify-content: stretch; }
+  .cookie-step2-actions .cbtn { flex: 1; text-align: center; }
+}
