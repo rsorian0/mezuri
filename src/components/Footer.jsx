@@ -120,11 +120,12 @@ export default function Footer() {
         {/* Empresa */}
         <div>
           <div style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1rem' }}>Empresa</div>
-          {[['https://kunlatek.com.br','Kunlatek',true],['/mezuri/sobre.html','Sobre',false],['#','Contato',false]].map(([href, label, ext]) => (
-            <div key={label} style={{ marginBottom: '0.6rem' }}>
-              <a href={href} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined} style={ss} onMouseOver={hover} onMouseOut={out}>{label}</a>
-            </div>
-          ))}
+          <div style={{ marginBottom: '0.6rem' }}>
+            <a href="/mezuri/sobre.html" style={ss} onMouseOver={hover} onMouseOut={out}>Sobre</a>
+          </div>
+          <div style={{ marginBottom: '0.6rem' }}>
+            <a href="https://wa.me/5582996972131?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20mezuri" target="_blank" rel="noopener" style={ss} onMouseOver={hover} onMouseOut={out}>Contato</a>
+          </div>
         </div>
 
         {/* Legal */}
