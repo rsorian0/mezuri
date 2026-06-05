@@ -17,8 +17,6 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font); background: var(--bg); color: var(--fg); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
     .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-links { display: flex; align-items: center; gap: 1.75rem; }
@@ -26,8 +24,6 @@
     .nav-links a:hover { color: var(--fg); }
     .nav-cta { padding: 0.45rem 1.1rem; background: var(--primary); color: white !important; border-radius: var(--radius); font-weight: 500; font-size: 0.875rem; }
     .nav-cta:hover { background: #232d47 !important; }
-
-    /* PAGE */
     .page-wrapper { max-width: 760px; margin: 0 auto; padding: 7rem 2.5rem 5rem; }
     .page-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; color: var(--fg); margin-bottom: 0.5rem; }
     .page-date { font-size: 0.8rem; color: var(--muted-fg); margin-bottom: 3rem; }
@@ -38,12 +34,9 @@
     .page-body ul li { font-size: 0.9375rem; color: var(--muted-fg); line-height: 1.75; margin-bottom: 0.35rem; }
     .page-body a { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; }
     .page-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-    /* FOOTER */
     footer { background: var(--primary); color: rgba(255,255,255,0.35); padding: 1.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; flex-wrap: wrap; gap: 0.5rem; }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
     footer a:hover { color: white; }
-
     @media (max-width: 768px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
@@ -53,7 +46,6 @@
   </style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="/mezuri/">
     <svg style="height:32px;display:block" viewBox="248 235 300 330" xmlns="http://www.w3.org/2000/svg" fill="#0f172a">
@@ -68,23 +60,16 @@
     <a href="https://wa.me/5582996972131?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20do%20mezuri" class="nav-cta" target="_blank" rel="noopener">Agendar diagnóstico</a>
   </div>
 </nav>
-
 <div class="page-wrapper">
   <h1 class="page-title">Termos de Uso</h1>
   <p class="page-date">Última atualização: junho de 2025</p>
-
   <div class="page-body">
-
     <h2>1. O serviço</h2>
     <p>O mezuri é uma plataforma de gestão desenvolvida pela <strong>Kunlatek</strong>, criada exclusivamente para escritórios de arquitetura. O acesso à plataforma requer a contratação de um processo de implantação e uma assinatura mensal ativa.</p>
-
     <hr class="page-divider" />
-
     <h2>2. Quem pode contratar</h2>
     <p>O mezuri atende exclusivamente a <strong>pessoas jurídicas (CNPJ)</strong> no segmento de arquitetura. Não são aceitos contratos com pessoas físicas (CPF) nem com empresas de outros segmentos.</p>
-
     <hr class="page-divider" />
-
     <h2>3. Cadastro e responsabilidades do usuário</h2>
     <p>Ao contratar e utilizar o mezuri, o contratante se compromete a:</p>
     <ul>
@@ -93,30 +78,20 @@
       <li>Utilizar a plataforma exclusivamente para fins lícitos e dentro do escopo contratado</li>
       <li>Comunicar imediatamente a Kunlatek em caso de uso não autorizado de sua conta</li>
     </ul>
-
     <hr class="page-divider" />
-
     <h2>4. Implantação</h2>
     <p>A implantação é obrigatória e conduzida pela equipe da Kunlatek. O escopo das atividades e o prazo estimado são definidos na proposta comercial aceita pelo contratante.</p>
-
     <hr class="page-divider" />
-
     <h2>5. Assinatura e pagamento</h2>
     <p>O valor da assinatura mensal é personalizado e informado após o diagnóstico gratuito. A inadimplência pode resultar na suspensão do acesso à plataforma e, em caso de não regularização, no cancelamento do contrato, conforme as condições estabelecidas na proposta.</p>
-
     <hr class="page-divider" />
-
     <h2>6. Propriedade intelectual</h2>
     <p>O nome mezuri, o código-fonte, a interface e todos os elementos da marca são de propriedade exclusiva da <strong>Kunlatek</strong> e estão protegidos pela legislação brasileira de propriedade intelectual.</p>
     <p>Os dados inseridos na plataforma pelo contratante (projetos, clientes, tarefas, etc.) pertencem ao contratante. A Kunlatek não reivindica propriedade sobre esses dados.</p>
-
     <hr class="page-divider" />
-
     <h2>7. Disponibilidade do serviço</h2>
     <p>A Kunlatek envidará esforços razoáveis para manter a plataforma disponível. Manutenções programadas serão comunicadas com antecedência. Interrupções não planejadas podem ocorrer e serão tratadas com prioridade.</p>
-
     <hr class="page-divider" />
-
     <h2>8. Limitação de responsabilidade</h2>
     <p>A Kunlatek não se responsabiliza por:</p>
     <ul>
@@ -125,39 +100,29 @@
       <li>Falhas em serviços de terceiros integrados ou utilizados como infraestrutura</li>
       <li>Perdas indiretas decorrentes da indisponibilidade temporária do serviço</li>
     </ul>
-
     <hr class="page-divider" />
-
     <h2>9. Cancelamento</h2>
     <p>O contratante pode solicitar o cancelamento a qualquer momento, conforme as condições estabelecidas no contrato. Após o cancelamento, os dados da plataforma ficam disponíveis para exportação por um período determinado, findo o qual são excluídos definitivamente.</p>
-
     <hr class="page-divider" />
-
     <h2>10. Alterações nos termos</h2>
     <p>Estes termos podem ser atualizados. O contratante será notificado com antecedência mínima de 30 dias antes de alterações substanciais entrarem em vigor. O uso continuado da plataforma após esse prazo implica a aceitação dos novos termos.</p>
-
     <hr class="page-divider" />
-
     <h2>11. Lei aplicável e foro</h2>
     <p>Estes termos são regidos pela legislação brasileira. Fica eleito o foro da comarca de <strong>Maceió, Alagoas</strong>, para dirimir quaisquer controvérsias decorrentes deste instrumento.</p>
-
     <hr class="page-divider" />
-
     <h2>12. Contato</h2>
     <p>E-mail: <a href="mailto:contato@kunlatek.com">contato@kunlatek.com</a><br />
     Site: <a href="https://kunlatek.com.br" target="_blank" rel="noopener">kunlatek.com.br</a></p>
-
   </div>
 </div>
-
 <footer>
-  <span>© 2025 mezuri. Todos os direitos reservados. · Kunlatek Tecnologia LTDA · CNPJ 36.899.179/0001-08</span>
+  <span id="footer-year">©  mezuri. Todos os direitos reservados. · Kunlatek Tecnologia LTDA · CNPJ 36.899.179/0001-08</span>
   <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
     <a href="/mezuri/privacidade.html">Política de privacidade</a>
     <a href="/mezuri/termos.html">Termos de uso</a>
     <a href="https://kunlatek.com.br" target="_blank" rel="noopener">Kunlatek</a>
   </div>
 </footer>
-
+<script>document.getElementById('footer-year').textContent = '© ' + new Date().getFullYear() + ' mezuri. Todos os direitos reservados. · Kunlatek Tecnologia LTDA · CNPJ 36.899.179/0001-08';</script>
 </body>
 </html>
