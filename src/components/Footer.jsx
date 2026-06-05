@@ -131,7 +131,7 @@ export default function Footer() {
         {/* Legal */}
         <div>
           <div style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1rem' }}>Legal</div>
-          {[  
+          {[
             ['/mezuri/privacidade.html', 'Política de privacidade'],
             ['/mezuri/termos.html', 'Termos de uso'],
             ['#', 'Preferências de cookies'],
@@ -146,7 +146,7 @@ export default function Footer() {
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }} />
 
       <div style={{ maxWidth: 1080, margin: '0 auto', padding: '1.25rem 2.5rem' }}>
-        <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.25)' }}>© 2025 mezuri. Todos os direitos reservados. · Kunlatek Tecnologia LTDA · CNPJ 36.899.179/0001-08</span>
+        <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.25)' }}>© {new Date().getFullYear()} mezuri. Todos os direitos reservados. · Kunlatek Tecnologia LTDA · CNPJ 36.899.179/0001-08</span>
       </div>
 
       <style>{`
