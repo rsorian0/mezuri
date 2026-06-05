@@ -130,7 +130,11 @@ export default function Footer() {
         {/* Legal */}
         <div>
           <div style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1rem' }}>Legal</div>
-          {[['#','Política de privacidade'],['#','Termos de uso'],['#','Preferências de cookies']].map(([href, label]) => (
+          {[  
+            ['/mezuri/privacidade.html', 'Política de privacidade'],
+            ['/mezuri/termos.html', 'Termos de uso'],
+            ['#', 'Preferências de cookies'],
+          ].map(([href, label]) => (
             <div key={label} style={{ marginBottom: '0.6rem' }}>
               <a href={href} style={ss} onMouseOver={hover} onMouseOut={out}>{label}</a>
             </div>

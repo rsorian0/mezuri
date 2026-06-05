@@ -14,7 +14,7 @@ export default function CookieBanner() {
     <div className="cookie-banner">
       {step === 1 && (
         <div className="cookie-step1">
-          <p>Usamos cookies para melhorar sua experiência. <a href="#">Política de privacidade</a>.</p>
+          <p>Usamos cookies para melhorar sua experiência. <a href="/mezuri/privacidade.html">Política de privacidade</a>.</p>
           <div className="cookie-step1-actions">
             <button className="cbtn cbtn-ghost" onClick={() => setStep(2)}>Personalizar</button>
             <button className="cbtn cbtn-outline" onClick={reject}>Recusar</button>
