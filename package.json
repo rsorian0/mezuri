@@ -2,7 +2,7 @@
   "name": "mezuri-landing",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://rsorian0.github.io/mezuri",
+  "homepage": "https://kunlatek.github.io/mezuri-lp",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
